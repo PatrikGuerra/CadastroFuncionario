@@ -1,0 +1,104 @@
+﻿<h3>{{ title }}</h3>
+
+<hr />
+
+<form class="form-horizontal" ng-submit="save()">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="NomePrimeiro">Nome</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="NomePrimeiro" ng-model="funcionario.NomePrimeiro" required maxlength="40"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="NomeMeio">Nome do meio</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="NomeMeio" ng-model="funcionario.NomeMeio" required maxlength="40"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="NomeUltimo">Sobrenome</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="NomeUltimo" ng-model="funcionario.NomeUltimo" required maxlength="40"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="NumeroTelefone">Telefone</label>
+        <div class="col-sm-10">
+            <input type="tel" class="form-control" id="NumeroTelefone" required maxlength="15" placeholder="(99) 99999-9999" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
+                   title="Informe um telefone do tipo '(99) 99999-9999'" ng-model="funcionario.NumeroTelefone" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="NumeroDocumento">CPF</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="NumeroDocumento" ng-model="funcionario.NumeroDocumento" required placeholder="Somente números" pattern="[0-9]+$"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="EnderecoRua">Rua</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="EnderecoRua" ng-model="funcionario.EnderecoRua" required maxlength="40"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="EnderecoNumero">Número</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="EnderecoNumero" ng-model="funcionario.EnderecoNumero"required  maxlength="10" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="EnderecoBairro">Bairro</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="EnderecoBairro" ng-model="funcionario.EnderecoBairro" required maxlength="40"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="EnderecoCidade">Cidade</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="EnderecoCidade" ng-model="funcionario.EnderecoCidade"  required maxlength="40"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="EnderecoCep">Cep</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="EnderecoCep" ng-model="funcionario.EnderecoCep" required maxlength="8" pattern="[0-9]+$" placeholder="9999999"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="EnderecoUf">UF</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="EnderecoUf" ng-model="funcionario.EnderecoUf" required maxlength="2"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="CargoNome">Cargo</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="CargoNome" ng-model="funcionario.CargoNome" required maxlength="40"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="CargoDescricao">Descrição do Cargo</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="CargoDescricao" ng-model="funcionario.CargoDescricao" required maxlength="40" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="CargoSalario">Salário</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="CargoSalario" ng-model="funcionario.CargoSalario" required pattern="([0-9]{1,3})?[0-9]{1,3}.[0-9]{2}$" placeholder="9999.99" />
+        </div>
+    </div>
+
+    <div class="alert alert-danger" ng-show="error != null && !error.Success">
+        <strong>{{ error.Message }}</strong>
+
+        <div ng-repeat="item in error.Erros">
+            {{ item.Message }}<br />
+        </div>
+    </div>
+
+    <a href="#!/list" class="btn btn-info">Voltar</a>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

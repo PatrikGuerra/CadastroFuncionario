@@ -1,0 +1,47 @@
+﻿
+<div class="row form-group">
+    <div class="col-sm-12 ">
+        <p>
+            <a class="btn btn-primary btn-md" href="#!/create" role="button">Criar</a>
+        </p>
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-sm-12 ">
+        <div class="table-responsive">
+            <table class="table  table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <!-- <th></th>-->
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Cargo</th>
+                        <th>Fone</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in employees">
+                        <!--
+<td>
+    <span class="chat-img pull-left">s
+        <img style="max-width:40px; max-height:40px" class="img-circle" alt="Foto do Usuário" ng-src="{{ item.Foto }}">
+    </span>
+</td>
+-->
+                        <td>{{ item.NomePrimeiro }}</td>
+                        <td>{{ item.NomeUltimo }}</td>
+                        <td>{{ item.CargoNome }}</td>
+                        <td>{{ item.NumeroTelefone }}</td>
+                        <td>
+                            <a href="#!/edit/{{ item.Id }}">Editar</a>
+                            <a href="#!/delete/{{ item.Id }}">Deletar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

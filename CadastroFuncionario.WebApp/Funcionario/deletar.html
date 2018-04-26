@@ -1,0 +1,103 @@
+﻿<h3>Tem certeza que deseja remover?</h3>
+
+<hr />
+
+<form class="form-horizontal" ng-submit="delete()">
+    <div class="form-group">
+        <label class="control-label col-xs-3">Nome:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.NomePrimeiro }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Nome do meio:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.NomeMeio }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Sobrenome:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.NomeUltimo }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Telefone:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.NumeroTelefone }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">CPF:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.NumeroDocumento }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Rua:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.EnderecoRua }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Número:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.EnderecoNumero }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Bairro:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.EnderecoBairro }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Cidade:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.EnderecoCidade}}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">CEP:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.EnderecoCep }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">UF:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.EnderecoUf }}</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-3">Cargo:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.CargoNome }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Descrição do Cargo:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.CargoDescricao }}</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-3">Salário:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ funcionario.CargoSalario }}</p>
+        </div>
+    </div>
+
+    <div class="alert alert-danger" ng-show="error != null && !error.Success">
+        <strong>{{ error.Message }}</strong>
+
+        <div ng-repeat="item in error.Erros">
+            {{ item.Message }}<br />
+        </div>
+    </div>
+
+    <a href="#!/list" class="btn btn-info">Voltar</a>
+    <button type="submit" class="btn btn-danger">Deletar</button>
+</form>
